@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Examination Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right,#fe664f, #fe0026);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .result-title {
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        .result-text {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .result-score {
+            font-size: 24px;
+            font-weight: bold;
+            color: orange;
+        }
+
+        .btn-exit {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: red;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-exit:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-box">
+        <h1 class="result-title">Exam Result</h1>
+        <p class="result-text">Student Name: <strong>cherry</strong></p>
+        <p class="result-text">Subject: <strong>Mathematics Aptitude Test</strong></p>
+        <p class="result-text">Your Score: <span class="result-score">8 / 10</span></p>
+        <p class="result-text">Status: <strong>Pass ✅</strong></p>
+        <a href="login.html" class="btn-exit">Logout</a>
+    </div>
+
+</body>
+</html>

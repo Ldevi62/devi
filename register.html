@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fe664f, #fe0026);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .reg-container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      max-width: 800px;
+      width: 100%;
+    }
+    .reg-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .reg-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .reg-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .reg-label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .reg-input, .reg-select, .reg-textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .reg-textarea {
+      resize: none;
+    }
+    .reg-btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #4facfe;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .reg-btn:hover {
+      background: #3b8de0;
+    }
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
+    a {
+      color: #4facfe;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reg-container">
+  <h2 class="reg-title">Student Registration Form</h2>
+  <form onsubmit="return registerUser(event)">
+    <div class="reg-row">
+      <div class="reg-group">
+        <label class="reg-label">Full Name</label>
+        <input type="text" class="reg-input" id="fullName" required>
+      </div>
+      <div class="reg-group">
+        <label class="reg-label">Email</label>
+        <input type="email" class="reg-input" id="email" required>
+      </div>
+    </div>
+    
+    <div class="reg-row">
+      <div class="reg-group">
+        <label class="reg-label">Phone Number</label>
+        <input type="tel" class="reg-input" id="phone" required>
+      </div>
+      <div class="reg-group">
+        <label class="reg-label">Date of Birth</label>
+        <input type="date" class="reg-input" id="dob" required>
+      </div>
+    </div>
+    
+    <div class="reg-row">
+      <div class="reg-group">
+        <label class="reg-label">Gender</label>
+        <select class="reg-select" id="gender" required>
+          <option value="">Select gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="reg-group">
+        <label class="reg-label">Create Username</label>
+        <input type="text" class="reg-input" id="username" required>
+      </div>
+    </div>
+    
+    <div class="reg-row">
+      <div class="reg-group">
+        <label class="reg-label">Create Password</label>
+        <input type="password" class="reg-input" id="password" required>
+      </div>
+      <div class="reg-group">
+        <label class="reg-label">Confirm Password</label>
+        <input type="password" class="reg-input" id="confirmPassword" required>
+      </div>
+    </div>
+    
+    <button type="submit" class="reg-btn">Register</button>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </form>
+</div>
+
+<script>
+  function registerUser(event) {
+    event.preventDefault();
+    let pass = document.getElementById("password").value;
+    let confirmPass = document.getElementById("confirmPassword").value;
+    
+    if (pass !== confirmPass) {
+      alert("Passwords do not match!");
+      return false;
+    }
+    
+    alert("Registration Successful! You can now login.");
+    window.location.href = "login.html";
+    return true;
+  }
+</script>
+
+</body>
+</html>

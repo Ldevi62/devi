@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Examination - Student Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fe664f, #fe0026);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .headings {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #333;
+    }
+    .labels {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #444;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+    }
+    input:focus {
+      border-color: #4facfe;
+      outline: none;
+    }
+    .button {
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background: #00c6fb;
+    }
+    p {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+    a {
+      color: #4facfe;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login">
+  <h2 class="headings">Access your profile</h2>
+  <form onsubmit="return loginUser(event)">
+    <label class="labels">Student ID</label>
+    <input type="text" id="studentId" placeholder="Enter your ID" required>
+    <label class="labels">Password</label>
+    <input type="password" id="password" placeholder="Enter your password" required>
+    <button type="submit" class="button">Login</button>
+    <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+  </form>
+</div>
+
+<script>
+  function loginUser(event) {
+    event.preventDefault();
+    let id = document.getElementById("studentId").value;
+    let pass = document.getElementById("password").value;
+    
+    // Simple check (replace with real authentication)
+    if (id && pass) {
+      alert("Login Successful for: " + id);
+      window.location.href = "dashboard.html"; // Example redirect
+    } else {
+      alert("Invalid ID or Password");
+    }
+  }
+</script>
+
+</body>
+</html>
